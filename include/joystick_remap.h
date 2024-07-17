@@ -8,22 +8,6 @@
 namespace joystick
 {
 
-
-
-class JoystickRemapper{
-    public:
-        std::string joystick_name;
-        Joystick *joystick;
-        JoystickConfig config;
-        ~JoystickRemapper();
-        JoystickRemapper();
-        JoystickRemapper(int joystick_number);
-        JoystickRemapper(std::string device_path);
-        void event_mapping();
-};
-
-
-
 class JoystickConfig{
     public:
         JoystickConfig(){
@@ -69,6 +53,19 @@ class JoystickConfig{
         std::string joystick_type;
         nlohmann::json mapping;
 };
+
+class JoystickRemapper{
+    public:
+        std::string joystick_name;
+        Joystick *joystick;
+        JoystickConfig config;
+        ~JoystickRemapper();
+        JoystickRemapper();
+        JoystickRemapper(int joystick_number);
+        JoystickRemapper(std::string device_path);
+        void event_mapping();
+};
+
 }   // namespace joystick
 
 #endif
