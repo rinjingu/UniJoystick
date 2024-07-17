@@ -64,6 +64,9 @@ class JoystickRemapper{
         JoystickRemapper(int joystick_number);
         JoystickRemapper(std::string device_path);
         void event_mapping();
+        void set_config(JoystickConfig config);
+    private:
+        void check_joystick();
 };
 
 }   // namespace joystick
